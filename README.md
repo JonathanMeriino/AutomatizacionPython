@@ -7,4 +7,13 @@
 4. Exportar el archivvo final con el resumen en formato CSV o Excel
 5. Automatiza el script para que pueda ejecutarse automaticamente cada cierto tiempo
 
+##### Analisis exploratorio 
 
+Despues de leer el archivo se ejecutan los siguientes métodos para analizar el dataset antes de aplicar tecnicas de pre-procesamiento
+
+
+
+![ED1](images/ED1.png)
+
+
+![ED2](images/ED2.png)
