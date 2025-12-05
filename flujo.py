@@ -1,6 +1,7 @@
 # Cargar biblitecas
 import pandas as pd
-
+import schedule
+import time
 # Cargar archivos
 df0 = pd.read_csv("Archivo ventas_simuladas.csv")
 
@@ -36,6 +37,21 @@ def flujo (df0):
     #Ordenar el resultado por mes y region
     ventas_region_mes = ventas_region_mes.sort_values(by=['mes','region'])
     
+    # Exportar a csv
+    df.to_csv('DataframeLimpio.csv')
+    df.to_csv('Ventas por region y mes.csv')
+    
     return ventas_region_mes
 
+
+schedule.every().monday.at("09:00").do(flujo)
+print("Resultado de ventas por region y mes: ")
 print(flujo(df0))
+
+'''
+El programa se queda ejecutando y espere a la fecha indicada
+while True:
+    schedule.run_pending()
+    time.sleep(1)
+
+'''
